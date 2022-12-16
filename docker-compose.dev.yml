@@ -11,8 +11,8 @@ services:
 
   backend:
     build:
-      context: ./backend
-      dockerfile: ./Dockerfile.dev
+      context: backend
+      dockerfile: Dockerfile.dev
     volumes:
       - /app/node_modules
       - ./backend:/app
@@ -28,8 +28,8 @@ services:
 
   frontend:
     build:
-      context: ./frontend
-      dockerfile: ./Dockerfile.dev
+      context: frontend
+      dockerfile: Dockerfile.dev
     volumes:
       - /app/node_modules
       - ./frontend:/app
@@ -40,8 +40,8 @@ services:
 
   nginx:
     build:
-      context: ./nginx
-      dockerfile: ./Dockerfile.dev
+      context: nginx
+      dockerfile: Dockerfile.dev
     ports:
       - 3000:80
     restart: always
